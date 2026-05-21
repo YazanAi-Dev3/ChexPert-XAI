@@ -1,0 +1,45 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+.env/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# OS / IDE Files
+.DS_Store
+.vscode/
+.idea/
+
+# Large Datasets & Archives
+*.zip
+*.tar.gz
+*.rar
+data/
+xai_data/
+extracted_files/
+
+# Model Weights
+*.pth
+*.pt
+models/
+xai_models/
+
+# Logs, Scratch, and Temporary Folders
+logs/
+logs_xai/
+scratch/
+Testing/scratch/
+tensorboard/
+runs/
+
+# Temporary Extraction Scripts & Outputs
+xai_results/extract_*.py
+xai_results/extracted_*.txt
+xai_results/extracted_*.md

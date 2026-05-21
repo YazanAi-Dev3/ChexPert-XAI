@@ -1,0 +1,38 @@
+{
+  "ImageNet_GradCAM": {
+    "threshold": "Percentile(85)",
+    "bbox_method": "Largest_CC",
+    "val_bbox_iou": 0.17954390021083683,
+    "val_pixel_iou": 0.09802387736375952,
+    "val_point_game": 0.1752136752136752,
+    "val_recall": 0.5748787990354067,
+    "val_area_ratio": 0.21424628044326705
+  },
+  "ImageNet_GradCAM++": {
+    "threshold": "Percentile(80)",
+    "bbox_method": "Convex_Hull",
+    "val_bbox_iou": 0.21014250285558972,
+    "val_pixel_iou": 0.13733228308437198,
+    "val_point_game": 0.09401709401709402,
+    "val_recall": 0.8213055445797661,
+    "val_area_ratio": 0.302770742712149
+  },
+  "RadImageNet_GradCAM": {
+    "threshold": "Percentile(90)",
+    "bbox_method": "Convex_Hull",
+    "val_bbox_iou": 0.2297150631417509,
+    "val_pixel_iou": 0.14735487827428517,
+    "val_point_game": 0.18162393162393162,
+    "val_recall": 0.546392421422758,
+    "val_area_ratio": 0.14561691563644688
+  },
+  "RadImageNet_GradCAM++": {
+    "threshold": "Percentile(90)",
+    "bbox_method": "Convex_Hull",
+    "val_bbox_iou": 0.23805747508616135,
+    "val_pixel_iou": 0.15928021382657212,
+    "val_point_game": 0.2799145299145299,
+    "val_recall": 0.5336289929260238,
+    "val_area_ratio": 0.13621760803680447
+  }
+}
