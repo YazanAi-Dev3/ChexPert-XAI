@@ -194,7 +194,7 @@ The charts below, generated from the extraction pipelines, show the systematic p
 - **Datasets**:
   - [CheXpert Dataset](https://drive.google.com/file/d/1W2S14FcXtG4SuCLcUVfErBQvW77RGMxm/view?usp=sharing) (For training and testing)
   - [CheXlocalize](https://drive.google.com/file/d/1Atl8PvKRpTxX2vO9qVGqz9Wd89LcDFEw/view?usp=sharing) (For XAI bounding box ground-truth)
-  - [PreProcessingCSVs](https://drive.google.com/file/d/1MHwl0pNcPuM5Lo01hQQzeVpknxVH1fWc/view?usp=sharing) (For XAI bounding box ground-truth)
+  - [PreProcessingCSVs](https://drive.google.com/file/d/1MHwl0pNcPuM5Lo01hQQzeVpknxVH1fWc/view?usp=sharing) (For All MetaData)
 
 - **Our Best custom trained weights can be downloaded from here**:
   - [DensNet121-RadImageNet](https://drive.google.com/file/d/18i4N3XEx4F9hW2fzSLDoL1wD8zsREhR5/view?usp=sharing)
