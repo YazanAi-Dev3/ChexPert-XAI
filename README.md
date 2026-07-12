@@ -1,9 +1,41 @@
 <div align="center">
-  <h1>Comparative XAI Study: ImageNet vs. RadImageNet Pre-training</h1>
-  <p><b>An Explainable AI (XAI) analysis comparing DenseNet-121 architectures on the CheXpert dataset.</b></p>
+
+# Comparative XAI Study: ImageNet vs. RadImageNet Pre-training
+
+**Does domain-specific pre-training make a chest X-ray classifier not just more accurate, but more *interpretable*? A controlled DenseNet-121 study on CheXpert, benchmarked against radiologist annotations.**
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://python.org)
+[![PyTorch](https://img.shields.io/badge/PyTorch-DenseNet--121-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org)
+[![Grad-CAM](https://img.shields.io/badge/XAI-Grad--CAM%2B%2B-9C27B0)](https://github.com/jacobgil/pytorch-grad-cam)
+[![Dataset](https://img.shields.io/badge/Data-CheXpert%20%2B%20CheXlocalize-005571)](https://stanfordmlgroup.github.io/competitions/chexpert/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 </div>
 
-<br/>
+---
+
+## Study Pipeline
+
+```mermaid
+flowchart LR
+    subgraph P1["Phase 1 · Training"]
+        D["CheXpert<br/>224x224 · CLAHE enhanced"] --> M1["DenseImageNet<br/>ImageNet init"]
+        D --> M2["DenseRadImageNet<br/>RadImageNet init"]
+        M1 --> T["Two-phase training:<br/>Asymmetric Loss (hard positives)<br/>→ BCE with per-class pos-weights<br/>AMP on CUDA"]
+        M2 --> T
+    end
+    subgraph P2["Phase 2 · Classification Eval"]
+        T --> E["AUROC + mAP<br/>6 radiological findings"]
+    end
+    subgraph P3["Phase 3 · XAI Eval"]
+        E --> X["2 explainers (Grad-CAM / Grad-CAM++)<br/>× 6+ thresholding methods<br/>× 3 bbox-extraction strategies"]
+        X --> G["Compare vs CheXlocalize<br/>radiologist bounding boxes<br/>(Bounding Box IoU)"]
+    end
+```
+
+**Result in one line:** RadImageNet pre-training won on *both* axes — better classification and tighter localization. The best pipeline (**RadImageNet + Grad-CAM++ + Percentile-90 thresholding + Convex-Hull extraction**) reached **BBox IoU ≈ 0.238**, confirming that domain-specific weights make the model "look" at the correct anatomy, not just predict correctly.
+
+---
 
 ## Project Overview
 
